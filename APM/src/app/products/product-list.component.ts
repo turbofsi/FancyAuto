@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 
 export class ProductListComponent {
     pageTitle: string = 'Car list';
+    listFilter: string = 'Lexus';
+    imageWidth: number = 50;
+    imageMargin: number = 5;
+    showImage: boolean = false;
     products: any[] = [
         {
             "productId": 1,
@@ -16,7 +20,7 @@ export class ProductListComponent {
             "description": "Leaf rake with 48-inch wooden handle.",
             "price": 19.95,
             "starRating": 3.2,
-            "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+            "imageUrl": "https://images.cdn.autocar.co.uk/sites/autocar.co.uk/files/styles/gallery_slide/public/macan-s-diesel-012.jpg?itok=IMJPGygv"
         },
         {
             "productId": 2,
@@ -39,4 +43,8 @@ export class ProductListComponent {
             "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
         }
     ]
+
+    toggleImage(): void {
+        this.showImage = !this.showImage;
+    }
 }
