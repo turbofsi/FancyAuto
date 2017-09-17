@@ -3,12 +3,7 @@ import { ProductService } from './products/services/product.service';
 
 @Component({
   selector: 'fc-root',
-  template:`
-    <div>
-      <h1>{{pageTitle}}</h1>
-      <fc-products></fc-products>
-     </div>
-  `,
+  templateUrl: './app.component.html',
   providers: [ ProductService ]
 })
 
