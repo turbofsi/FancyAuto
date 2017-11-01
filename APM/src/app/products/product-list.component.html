@@ -48,8 +48,8 @@
                     <td>{{ product.ProductDate }}</td>
                     <td>{{ product.price | currency:'CAD':true:'1.2-2' }}</td>
                     <td>
-                        <fc-star [rating]='product.starRating' 
-                                 (ratingClicked)='onRatingClicked($event)'></fc-star>
+                        <pm-star [rating]='product.starRating' 
+                                 (ratingClicked)='onRatingClicked($event)'></pm-star>
                     </td>
                   </tr>
                 </tbody>

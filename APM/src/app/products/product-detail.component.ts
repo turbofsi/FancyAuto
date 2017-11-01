@@ -9,13 +9,13 @@ import { IProduct } from './product';
 })
 export class ProductDetailComponent implements OnInit {
 
-  pageTitle: string="Product Detail";
+  pageTitle: string= 'Product Detail';
   product: IProduct;
 
   constructor(private _route: ActivatedRoute, private _router: Router) { }
 
   ngOnInit() {
-    let id = +this._route.snapshot.paramMap.get('id');
+    const id = +this._route.snapshot.paramMap.get('id');
     this.pageTitle += `: ${id}`;
   }
 

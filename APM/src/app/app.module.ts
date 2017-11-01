@@ -25,7 +25,7 @@ import { ProductGuardService } from './products/product-guard.service';
     FormsModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductListComponent },
-      { path: 'products/:id', 
+      { path: 'products/:id',
         canActivate: [ ProductGuardService ],
         component: ProductDetailComponent },
       { path: 'welcome', component: WelcomeComponent },

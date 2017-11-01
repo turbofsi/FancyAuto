@@ -3,19 +3,26 @@ import { IProduct } from './product';
 import { ProductService } from './services/product.service';
 
 @Component({
-    selector: 'fc-products',
+    selector: 'pm-products',
     templateUrl: './product-list.component.html',
     styleUrls: ['./product-list.component.css']
 })
 
 export class ProductListComponent implements OnInit  {
+    pageTitle: string = 'Car list';
+    _listFilter: string;
+    filterdProducts: IProduct[];
+    imageWidth: number = 50;
+    imageMargin: number = 5;
+    showImage: boolean = false;
+    products: IProduct[];
+    private _productService: ProductService;
+
     ngOnInit(): void {
         console.log('on init');
         this.products = this._productService.getProducts();
         this.filterdProducts = this.products;
     }
-    pageTitle: string = 'Car list';
-    _listFilter: string;
 
     get listFilter(): string {
         return this._listFilter;
@@ -25,14 +32,6 @@ export class ProductListComponent implements OnInit  {
         this.filterdProducts = this.listFilter ? this.performFilter(this.listFilter) : this.products;
     }
 
-    filterdProducts: IProduct[];
-
-    imageWidth: number = 50;
-    imageMargin: number = 5;
-    showImage: boolean = false;
-    products: IProduct[];
-
-    private _productService: ProductService;
     constructor(productService: ProductService) {
         this._productService = productService;
     }
@@ -47,6 +46,6 @@ export class ProductListComponent implements OnInit  {
     }
 
     onRatingClicked(message: string) {
-        this.pageTitle = "Car List " + message;
+        this.pageTitle = 'Car List ' + message;
     }
 }
